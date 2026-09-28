@@ -47,7 +47,7 @@ Results from testing on a 4K image:
 ## How to Run
 
 ### Dependencies
-- C++ compiler (MSVC or g++).=
+- C++ compiler (MSVC or g++)
 - OpenCV (Lossy only) —> set up as in Visual Studio 2022 with Debug lib
 
 ### Lossy (CPE462Lossy.cpp)
