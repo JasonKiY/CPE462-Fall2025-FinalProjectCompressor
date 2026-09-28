@@ -3,7 +3,7 @@
 This repository contains two different C++ files, both employing different compression techniques to reduce file size. One uses DFT (Discrete Fourier Transform) compression to reduce file size dramatically at the cost of image quality and the other uses Huffman Encoding to preserve the image entirely at the cost of size reduction and file usability.
 
 ## Algorithms
-### __Lossy Compression (DFT)__
+### <ins>Lossy Compression (DFT)<\ins>
 The lossy compressor reduces file size at the cost of image quality using a Discrete Fourier Transform (DFT) algorithm. The process works as follows:
 1. The image's colors are converted to the YCbCr color space for separate luminance (Y) and chrominance values (Cr, Cb).
 2. These elements are given three separate channels (Y, Cr, Cb).
@@ -21,5 +21,5 @@ The level of compression is determined by the "keepFraction" variable where a lo
 
 OpenCV is **required** for matrix operations and open I/O.
 
-### __Lossless Compression (Huffman Encoding)__
+### Lossless Compression (Huffman Encoding)
 The lossless compressor 
