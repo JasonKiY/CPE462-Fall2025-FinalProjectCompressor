@@ -62,3 +62,6 @@ Results from testing on a 4K image:
 3. Run `.\compressor` and choose compression or decompression.
 4. Enter the full path to your input image (e.g. `"C:\images\photo.jpg"`).
 5. Find the output `.huf` or decompressed image in the same directory.
+
+# Course Context
+Final Project for CPE-462 (Image Processing & Coding) at Stevens Institute of Technology for Fall 2025.
