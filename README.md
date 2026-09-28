@@ -22,4 +22,27 @@ The level of compression is determined by the "keepFraction" variable where a lo
 OpenCV is **required** for matrix operations and open I/O.
 
 ### <ins>Lossless Compression (Huffman Encoding)
-The lossless compressor 
+The lossless compressor reduces file size by converting the image data into Huffman codes which can be fully decoded back into the original image. The process works as follows:
+1. Image data is scanned for byte frequencies which are then used to build a Huffman tree.
+2. 
+ 
+
+## How to Run
+
+### Dependencies
+- C++ compiler (MSVC or g++)
+- OpenCV (Lossy only) — set up as in Visual Studio 2022 with Debug lib
+
+### Lossy (CPE462Lossy.cpp)
+1. Set up OpenCV in Visual Studio 2022 and build the solution in Debug mode
+2. Open a terminal and navigate to `...\repos\{Project Name}\x64\Debug`
+3. Place your input `.jpg` image in that folder
+4. Run `.\{ProjectName}` and enter your image name and keepFraction value (0.01–1.0)
+5. Find the compressed output image in the same Debug folder
+
+### Lossless (CPE462Lossless.cpp)
+1. Open a terminal and navigate to the directory containing the .cpp file
+2. Compile with: `g++ CPE462ProjectLossless.cpp -o compressor`
+3. Run `.\compressor` and choose compression or decompression
+4. Enter the full path to your input image (e.g. `"C:\images\photo.jpg"`)
+5. Find the output `.huf` or decompressed image in the same directory
