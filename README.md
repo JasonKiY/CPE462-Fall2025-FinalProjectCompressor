@@ -21,5 +21,5 @@ The level of compression is determined by the "keepFraction" variable where a lo
 
 OpenCV is **required** for matrix operations and open I/O.
 
-### Lossless Compression (Huffman Encoding)
+### <ins>Lossless Compression (Huffman Encoding)
 The lossless compressor 
