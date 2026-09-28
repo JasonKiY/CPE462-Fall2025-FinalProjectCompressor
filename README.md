@@ -31,7 +31,7 @@ The lossless compressor reduces file size by converting the image data into Huff
 
 ### Dependencies
 - C++ compiler (MSVC or g++)
-- OpenCV (Lossy only) — set up as in Visual Studio 2022 with Debug lib
+- OpenCV (Lossy only) —> set up as in Visual Studio 2022 with Debug lib
 
 ### Lossy (CPE462Lossy.cpp)
 1. Set up OpenCV in Visual Studio 2022 and build the solution in Debug mode
