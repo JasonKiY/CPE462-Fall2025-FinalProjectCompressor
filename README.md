@@ -18,6 +18,7 @@ The level of compression is determined by the "keepFraction" variable where a lo
 | 0.9 | 728 KB | 20.9% |
 | 0.5 | 338 KB | 63.3% |
 | 0.3 | 259 KB | 71.8% |
+| 0.01 | 130 KB | 85.9% |
 
 OpenCV is **required** for matrix operations and open I/O.
 
