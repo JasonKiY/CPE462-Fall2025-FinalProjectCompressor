@@ -23,26 +23,42 @@ OpenCV is **required** for matrix operations and open I/O.
 
 ### <ins>Lossless Compression (Huffman Encoding)
 The lossless compressor reduces file size by converting the image data into Huffman codes which can be fully decoded back into the original image. The process works as follows:
+**Compression:**
 1. Image data is scanned for byte frequencies which are then used to build a Huffman tree.
-2. 
- 
+2. Image data is encoded into bits with a frequency map saved as the header within the compressed file.
+3. Padding is added to the end of the last byte to complete ensure byte alignment.
+4. Tree is cleaned up to free memory, and the compressed file is written (.huf). 
+
+**Decompression:**
+1. The saved header is read to reconstruct the frequency map and rebuild the Huffman tree.
+2. The padding byte is read to determine how many bits of the last byte to disregard.
+3. The data is decoded through Huffman tree traversal where each leaf node character is output and formatted back to the original image.
+
+Results from testing on a 4K image:
+| File | Size |
+|---|---|
+| Original (p3wallpaper.jpg) | 920 KB |
+| Compressed (compressed.huf) | 914 KB |
+| Reduction | ~0.7% |
+
+> **Note:** Lossless compression yields minimal size reduction on already-compressed formats like JPEG. Results would be more significant on raw/uncompressed image formats.
 
 ## How to Run
 
 ### Dependencies
-- C++ compiler (MSVC or g++)
+- C++ compiler (MSVC or g++).=
 - OpenCV (Lossy only) —> set up as in Visual Studio 2022 with Debug lib
 
 ### Lossy (CPE462Lossy.cpp)
-1. Set up OpenCV in Visual Studio 2022 and build the solution in Debug mode
-2. Open a terminal and navigate to `...\repos\{Project Name}\x64\Debug`
-3. Place your input `.jpg` image in that folder
-4. Run `.\{ProjectName}` and enter your image name and keepFraction value (0.01–1.0)
-5. Find the compressed output image in the same Debug folder
+1. Set up OpenCV in Visual Studio 2022 and build the solution in Debug mode.
+2. Open a terminal and navigate to `...\repos\{Project Name}\x64\Debug`.
+3. Place your input `.jpg` image in that folder.
+4. Run `.\{ProjectName}` and enter your image name and keepFraction value (0.01–1.0).
+5. Find the compressed output image in the same Debug folder.
 
 ### Lossless (CPE462Lossless.cpp)
-1. Open a terminal and navigate to the directory containing the .cpp file
-2. Compile with: `g++ CPE462ProjectLossless.cpp -o compressor`
-3. Run `.\compressor` and choose compression or decompression
-4. Enter the full path to your input image (e.g. `"C:\images\photo.jpg"`)
-5. Find the output `.huf` or decompressed image in the same directory
+1. Open a terminal and navigate to the directory containing the .cpp file.
+2. Compile with: `g++ CPE462ProjectLossless.cpp -o compressor`.
+3. Run `.\compressor` and choose compression or decompression.
+4. Enter the full path to your input image (e.g. `"C:\images\photo.jpg"`).
+5. Find the output `.huf` or decompressed image in the same directory.
