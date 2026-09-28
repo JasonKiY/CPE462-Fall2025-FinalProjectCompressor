@@ -9,4 +9,5 @@ The lossy compressor reduces file size at the cost of image quality using a Disc
 2. These elements are given three separate channels (Y, Cr, Cb).
 3. An fftshift, using a complex matrix, is applied to each individual channel for compression where the luminance (Y) is compressed at a higher intensity than the chrominance (Cr, Cb).
 4. All channels (Y, Cr, Cb) are recombined and the output image is written to a file.
+
 The level of compression is determined by the "keepFraction" variable
