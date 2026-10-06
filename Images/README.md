@@ -2,7 +2,7 @@
 
 - "p3wallpaper.jpg" is the original uncompressed 4K wallpaper.
   
-![Original](Images/p3wallpaper.jpg)
+![Original](images/p3wallpaper.jpg)
 
 - "image0.9.jpg" is the compressed image at a keepFraction value of 0.9.
 - "image0.5.jpg" is the compressed image at a keepFraction value of 0.5.
